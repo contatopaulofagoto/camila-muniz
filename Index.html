@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formação IMPARÁVEL | Camila Muniz</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- RESET & VARIÁVEIS GLAMOUR/ELEGANTES --- */
+        :root {
+            --primary-gold: #c5a059;
+            --primary-gold-hover: #b08b46;
+            --camila-rose: #D3A29D; /* Cor exclusiva para o nome Camila Muniz */
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --bg-light: #fdfbf7;
+            --text-dark: #2c2c2c;
+            --text-light: #f4f4f4;
+            --text-muted: #a0a0a0;
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --font-signature: 'Great Vibes', cursive;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Classe para destacar o nome da Camila Muniz */
+        .text-camila {
+            color: var(--camila-rose) !important;
+        }
+
+        /* --- ANIMAÇÕES JS (SCROLL REVEAL) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            will-change: opacity, transform;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- HEADER FIXO INTELIGENTE (STICKY) --- */
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            background: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            transform: translateY(-100%);
+            transition: var(--transition);
+        }
+
+        .sticky-nav.show {
+            transform: translateY(0);
+        }
+
+        .sticky-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sticky-nav-logo {
+            font-family: var(--font-title);
+            font-weight: 700;
+            color: var(--primary-gold);
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .sticky-nav-btn {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .sticky-nav-btn:hover {
+            background: #fff;
+            box-shadow: 0 0 15px rgba(197, 160, 89, 0.6);
+        }
+
+        /* --- ELEMENTOS DE LAYOUT --- */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-title);
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- BOTÃO CTA --- */
+        .btn-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+            color: #fff;
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 10px 25px rgba(197, 160, 89, 0.3);
+            transition: var(--transition);
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-cta::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(30deg);
+            transition: 0.8s;
+        }
+
+        .btn-cta:hover::after {
+            left: 100%;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(197, 160, 89, 0.5);
+        }
+
+        .cta-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* --- HERO SECTION COM PARALLAX --- */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.92)), url('https://i.imgur.com/5Z4T2HG.jpeg') center 25%/cover no-repeat;
+            padding: 90px 0 110px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-gold);
+            background-attachment: fixed;
+        }
+
+        .hero-brand-logo {
+            max-width: 180px;
+            height: auto;
+            margin: 0 auto 30px auto;
+            display: block;
+            filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.6));
+            transition: var(--transition);
+            opacity: 0.95;
+        }
+
+        .hero-brand-logo:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .hero-title {
+            font-family: var(--font-title);
+            font-size: 3.5rem;
+            color: var(--primary-gold);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            color: #ddd;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            color: var(--text-muted);
+            font-style: italic;
+            min-height: 2rem;
+        }
+
+        /* --- SOBRE A CAMILA --- */
+        .about {
+            background-color: var(--bg-card);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img-box {
+            position: relative;
+            text-align: center;
+            perspective: 1000px;
+        }
+
+        .about-img-box img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            max-height: 550px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            transition: transform 0.5s ease;
+        }
+
+        .about-img-box:hover img {
+            transform: scale(1.02) rotateY(-3deg);
+        }
+
+        .about-content h3 {
+            font-family: var(--font-title);
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            margin-bottom: 15px;
+            color: #ccc;
+            font-size: 0.98rem;
+            text-align: justify;
+        }
+
+        .signature {
+            font-family: var(--font-signature);
+            font-size: 3.5rem;
+            color: var(--camila-rose);
+            margin-top: 20px;
+            display: block;
+        }
+
+        /* --- OBJETIVO DA FORMAÇÃO --- */
+        .objective-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .obj-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-gold);
+            transition: var(--transition);
+            transform-style: preserve-3d;
+        }
+
+        .obj-card:hover {
+            transform: translateY(-8px);
+            background: #252525;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .obj-card i {
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .obj-card:hover i {
+            transform: scale(1.18);
+        }
+
+        .obj-card p {
+            color: #ddd;
+            font-size: 0.95rem;
+        }
+
+        .objective-highlight {
+            text-align: center;
+            margin-top: 50px;
+            font-family: var(--font-title);
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+            background: rgba(197, 160, 89, 0.1);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px dashed var(--primary-gold);
+        }
+
+        /* --- O QUE VAI APRENDER --- */
+        .learn-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .learn-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .learn-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(197, 160, 89, 0.15);
+        }
+
+        .learn-card i {
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+            margin-top: 5px;
+        }
+
+        .learn-card p {
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        /* --- DIFERENCIAL --- */
+        .differential {
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+            text-align: center;
+        }
+
+        .differential-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .differential p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+
+        /* --- PARA QUEM É --- */
+        .target-list {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .target-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: #ddd;
+        }
+
+        .target-item i {
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+        }
+
+        /* --- SESSÃO DE DEPOIMENTOS --- */
+        .testimonials {
+            background-color: var(--bg-card);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .testimonial-card {
+            background: #171717;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--primary-gold);
+            box-shadow: 0 15px 30px rgba(197, 160, 89, 0.3);
+        }
+
+        .testimonial-img-wrapper {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-img-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .testimonial-caption {
+            font-size: 0.9rem;
+            color: var(--primary-gold);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding-top: 5px;
+        }
+
+        .testimonial-caption i {
+            color: #25d366;
+            font-size: 1.1rem;
+        }
+
+        /* --- MODAL DE ZOOM PARA DEPOIMENTOS --- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.92);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 8px;
+            box-shadow: 0 5px 30px rgba(197, 160, 89, 0.4);
+            object-fit: contain;
+            border: 1px solid var(--primary-gold);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 35px;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            user-select: none;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: var(--primary-gold);
+        }
+
+        /* --- OFERTA / PREÇO --- */
+        .pricing {
+            background: linear-gradient(180deg, var(--bg-dark) 0%, #1a1710 100%);
+            text-align: center;
+        }
+
+        .pricing-box {
+            background: var(--bg-card);
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 50px 30px;
+            border-radius: 15px;
+            border: 2px solid var(--primary-gold);
+            position: relative;
+            box-shadow: 0 0 30px rgba(197, 160, 89, 0.2);
+            transition: var(--transition);
+        }
+
+        .pricing-box:hover {
+            box-shadow: 0 0 45px rgba(197, 160, 89, 0.35);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-gold);
+            color: #000;
+            font-weight: 700;
+            padding: 5px 20px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .price-value {
+            font-family: var(--font-title);
+            font-size: 3.5rem;
+            color: var(--primary-gold);
+            margin: 20px 0 5px 0;
+        }
+
+        .price-value span {
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .price-details {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        .features-list {
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto 30px auto;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding: 20px 0;
+        }
+
+        .features-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ddd;
+        }
+
+        .features-list li i {
+            color: var(--primary-gold);
+        }
+
+        .guarantee-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            color: var(--text-muted);
+        }
+
+        .guarantee-box i {
+            font-size: 2rem;
+            color: var(--primary-gold);
+        }
+
+        /* --- ECOSSISTEMA / REDES SOCIAIS --- */
+        .ecosystem {
+            background-color: var(--bg-card);
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .social-link-card {
+            background: #252525;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .social-link-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-5px);
+            background: #2a2a2a;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .social-link-card i {
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            width: 30px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .social-link-card:hover i {
+            transform: scale(1.2);
+        }
+
+        .social-link-info h4 {
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .social-link-info span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #0a0a0a;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #222;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-content p {
+                text-align: left;
+            }
+
+            .about-img-box {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                background-position: center 25%;
+                padding: 60px 0 80px 0;
+            }
+
+            .hero-brand-logo {
+                max-width: 140px;
+                margin-bottom: 20px;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .price-value {
+                font-size: 2.5rem;
+            }
+
+            .btn-cta {
+                font-size: 0.95rem;
+                padding: 18px 20px;
+            }
+
+            .target-list {
+                padding: 25px 15px;
+            }
+
+            .signature {
+                font-size: 2.8rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY HEADER FLUTUANTE -->
+    <nav class="sticky-nav" id="stickyNav">
+        <div class="container">
+            <span class="sticky-nav-logo">IMPARÁVEL | <span class="text-camila">Camila Muniz</span></span>
+            <a href="#oferta" class="sticky-nav-btn">Garantir Vaga</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero" id="hero">
+        <div class="container">
+            <img src="https://i.imgur.com/GhSWSxg.png" alt="Logo Camila Muniz" class="hero-brand-logo">
+            
+            <h1 class="hero-title">FORMAÇÃO IMPARÁVEL</h1>
+            <p class="hero-subtitle">Com <span class="text-camila">Camila Muniz</span></p>
+            <p class="hero-tagline" id="heroTagline"></p>
+            <div class="cta-container">
+                <a href="#oferta" class="btn-cta">QUERO ME TORNAR IMPARÁVEL</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SOBRE A CAMILA MUNIZ -->
+    <section class="about section-padding reveal">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img-box">
+                    <img src="https://i.imgur.com/5Z4T2HG.jpeg" alt="Camila Muniz - Estrategista Digital e Mentora">
+                </div>
+                <div class="about-content">
+                    <h3>Seja bem-vinda ao meu mundo.</h3>
+                    <p>Sou <strong class="text-camila">Camila Muniz</strong>, Estrategista Digital e Mentora, apaixonada por transformar possibilidades em caminhos reais através da internet.</p>
+                    <p>Minha trajetória no digital começou muito antes de ter tudo pronto. Eu também precisei começar, aprender, testar, errar e descobrir, na prática, como usar a internet para criar novas oportunidades.</p>
+                    <p>Hoje, compartilho aquilo que aprendi ao longo dessa caminhada, ajudando outras mulheres a enxergarem que é possível começar do zero e construir sua própria trajetória no digital, com estratégia, conhecimento e ação.</p>
+                    <p>CEO da Formação IMPARÁVEL, ensino de forma prática e descomplicada estratégias para quem deseja entrar no mercado digital, trabalhar com plataformas, criar conteúdo e desenvolver novas possibilidades de renda através da internet.</p>
+                    <p>Aqui você encontra meus projetos, lojas, canais, conteúdos e tudo o que faz parte do meu universo no digital.</p>
+                    
+                    <span class="signature">Camila Muniz</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRINCIPAL OBJETIVO -->
+    <section class="section-padding reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>O Principal Objetivo</h2>
+                <p>Preparar mulheres para serem protagonistas da sua própria história</p>
+            </div>
+            
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px auto; color: #ccc;">
+                Talvez você tenha passado anos trocando tempo por dinheiro, seguindo uma rotina que nem sempre permite escolher onde estar, com quem estar ou como viver seus dias.
+            </p>
+
+            <div class="objective-cards">
+                <div class="obj-card">
+                    <i class="fa-solid fa-baby"></i>
+                    <p>Para a mãe que quer estar mais presente na vida dos filhos.</p>
+                </div>
+                <div class="obj-card">
+                    <i class="fa-solid fa-house-laptop"></i>
+                    <p>Para quem sonha em trabalhar do conforto de casa.</p>
+                </div>
+                <div class="obj-card">
+                    <i class="fa-solid fa-clock"></i>
+                    <p>Para quem deseja ter mais tempo para a família e para si mesma.</p>
+                </div>
+                <div class="obj-card">
+                    <i class="fa-solid fa-plane"></i>
+                    <p>Para quem busca liberdade financeira e geográfica via internet.</p>
+                </div>
+            </div>
+
+            <div class="objective-highlight">
+                "Liberdade não é apenas ganhar dinheiro. É também ter mais escolha sobre o seu tempo. É sair do ordinário e passar a viver o EXTRAORDINÁRIO."
+            </div>
+        </div>
+    </section>
+
+    <!-- O QUE VAI APRENDER -->
+    <section class="section-padding reveal" style="background-color: var(--bg-card);">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que você vai aprender na IMPARÁVEL</h2>
+            </div>
+
+            <div class="learn-grid">
+                <div class="learn-card">
+                    <i class="fa-solid fa-compass"></i>
+                    <p><strong>Direção Inicial:</strong> Por onde começar, saber o que fazer e quais caminhos seguir no digital.</p>
+                </div>
+                <div class="learn-card">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <p><strong>Aplicações Simples:</strong> Estratégias práticas que você pode aplicar facilmente no seu dia a dia.</p>
+                </div>
+                <div class="learn-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <p><strong>Vendas Flexíveis:</strong> Aprenda a vender no digital, aparecendo ou sem aparecer.</p>
+                </div>
+                <div class="learn-card">
+                    <i class="fa-solid fa-store"></i>
+                    <p><strong>Marketplaces:</strong> Oportunidades em plataformas e como utilizá-las a seu favor.</p>
+                </div>
+                <div class="learn-card">
+                    <i class="fa-solid fa-comments"></i>
+                    <p><strong>Conteúdo que Conecta:</strong> Criação estratégica para atrair as pessoas certas ao seu perfil.</p>
+                </div>
+                <div class="learn-card">
+                    <i class="fa-solid fa-user-check"></i>
+                    <p><strong>Perfil de Sucesso:</strong> Como estruturar um perfil bonito e focado em vendas.</p>
+                </div>
+                <div class="learn-card">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <p><strong>Ferramentas Modernas:</strong> Uso descomplicado de Canva, CapCut e Inteligência Artificial para conteúdos profissionais.</p>
+                </div>
+                <div class="learn-card">
+                    <i class="fa-solid fa-rocket"></i>
+                    <p><strong>Ação Prática:</strong> Direção completa para sair da teoria e construir sua jornada de fato.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAL -->
+    <section class="differential section-padding reveal">
+        <div class="container">
+            <div class="differential-content">
+                <div class="section-header">
+                    <h2>O Meu Diferencial</h2>
+                </div>
+                <p>Eu não ensino apenas o que funciona no papel. Eu ensino o que aprendi vivendo o digital na prática.</p>
+                <p>Minha metodologia une estratégia, prática e linguagem simples, para que você consiga entender, aplicar e começar a construir sua própria jornada, mesmo que esteja começando do zero.</p>
+                <p><strong>Aqui você não encontra fórmulas mágicas ou promessas de dinheiro fácil.</strong> Encontra direção, conhecimento e estratégias para transformar o digital em uma possibilidade real.</p>
+                <p style="font-size: 1.3rem; color: var(--primary-gold); font-weight: 600; margin-top: 30px;">
+                    Eu não quero apenas te ensinar. Quero te mostrar o caminho para você se tornar IMPARÁVEL.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARA QUEM É -->
+    <section class="section-padding reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Para quem é a IMPARÁVEL?</h2>
+                <p>Para mulheres que querem começar ou se desenvolver no digital com clareza</p>
+            </div>
+
+            <div class="target-list">
+                <div class="target-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Está começando do zero e se sente perdida no caminho.</span>
+                </div>
+                <div class="target-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Quer aprender a vender pela internet de forma estratégica.</span>
+                </div>
+                <div class="target-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Busca novas possibilidades de renda através do digital.</span>
+                </div>
+                <div class="target-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Já tentou diversas formas de fazer dinheiro, mas sente que falta direção.</span>
+                </div>
+                <div class="target-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Quer aprender estratégias práticas sem precisar ser especialista.</span>
+                </div>
+                <p style="text-align: center; margin-top: 30px; font-weight: 600; color: var(--primary-gold);">
+                    Se você está disposta a aprender, aplicar e dar o primeiro passo, a IMPARÁVEL é para você.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS REAIS DE ALUNAS -->
+    <section class="testimonials section-padding reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quem Venceu com a Mentoria</h2>
+                <p>Veja o que as alunas estão dizendo sobre o impacto da mentoria nas suas vidas</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Depoimento 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-img-wrapper">
+                        <img src="https://i.imgur.com/8wvlEWR.jpeg" alt="Depoimento Aluna Mentoria 1" class="print-img" loading="lazy">
+                    </div>
+                    <div class="testimonial-caption">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Depoimento Real no WhatsApp</span>
+                    </div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-img-wrapper">
+                        <img src="https://i.imgur.com/Q1SKtcE.jpeg" alt="Depoimento Aluna Mentoria 2" class="print-img" loading="lazy">
+                    </div>
+                    <div class="testimonial-caption">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Transformação de Resultados</span>
+                    </div>
+                </div>
+
+                <!-- Depoimento 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-img-wrapper">
+                        <img src="https://i.imgur.com/OkGeCVj.jpeg" alt="Depoimento Aluna Mentoria 3" class="print-img" loading="lazy">
+                    </div>
+                    <div class="testimonial-caption">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Feedback de Aluna Imparável</span>
+                    </div>
+                </div>
+
+                <!-- Depoimento 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-img-wrapper">
+                        <img src="https://i.imgur.com/hXNKjcm.jpeg" alt="Depoimento Aluna Mentoria 4" class="print-img" loading="lazy">
+                    </div>
+                    <div class="testimonial-caption">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Conquistas e Aprendizado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTRUTURA DO MODAL DE ZOOM PARA OS DEPOIMENTOS -->
+    <div class="modal-overlay" id="modal">
+        <span class="modal-close" id="modalClose">&times;</span>
+        <img class="modal-content" id="modalImg" alt="Depoimento Ampliado">
+    </div>
+
+    <!-- OFERTA E PREÇO -->
+    <section id="oferta" class="pricing section-padding reveal">
+        <div class="container">
+            <div class="pricing-box">
+                <div class="pricing-badge">Acesso Imediato</div>
+                <h3 style="font-family: var(--font-title); font-size: 2rem;">Mentoria IMPARÁVEL</h3>
+                
+                <div class="price-value">
+                    <span>12x de</span> R$ 19,70
+                </div>
+                <p class="price-details">ou R$ 197,00 à vista</p>
+
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-star"></i> <strong>1 Ano de Acesso</strong> (Aulas gravadas e ao vivo)</li>
+                    <li><i class="fa-solid fa-gift"></i> <strong>BÔNUS EXCLUSIVO:</strong> Packs para story e post</li>
+                    <li><i class="fa-solid fa-credit-card"></i> Pagamento no Cartão (até 12x) ou Pix</li>
+                    <li><i class="fa-solid fa-arrows-rotate"></i> Renovação anual para se manter atualizada</li>
+                </ul>
+
+                <button class="btn-cta" onclick="cliqueMentoria()">QUERO ME TORNAR IMPARÁVEL</button>
+
+                <div class="guarantee-box">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div style="text-align: left;">
+                        <strong style="color: #fff; display: block;">Garantia Incondicional</strong>
+                        <span style="font-size: 0.85rem;">Teste por 07 dias. Se não gostar, devolvemos seu dinheiro.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ECOSSISTEMA E REDES SOCIAIS -->
+    <section class="ecosystem section-padding reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Universo <span class="text-camila">Camila Muniz</span></h2>
+                <p>Conheça meus projetos, lojas parceiras e canais oficiais</p>
+            </div>
+
+            <div class="links-grid">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/camilamunizmentora?igsi=MWo4ZnA4aXp3bmU1Zw" target="_blank" class="social-link-card">
+                    <i class="fa-brands fa-instagram"></i>
+                    <div class="social-link-info">
+                        <h4>Instagram</h4>
+                        <span>@camilamunizmentora</span>
+                    </div>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/message/QXNVYSTM64FLI1" target="_blank" class="social-link-card">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div class="social-link-info">
+                        <h4>WhatsApp</h4>
+                        <span>Contato Direto</span>
+                    </div>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@camila.muniz.shop?_r=1&_t=ZS-99GFJsyqwhF" target="_blank" class="social-link-card">
+                    <i class="fa-brands fa-tiktok"></i>
+                    <div class="social-link-info">
+                        <h4>TikTok</h4>
+                        <span>@camila.muniz.shop</span>
+                    </div>
+                </a>
+
+                <!-- Shopee -->
+                <a href="https://collshp.com/munizstore13?view=storefront" target="_blank" class="social-link-card">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <div class="social-link-info">
+                        <h4>Shopee</h4>
+                        <span>Muniz Store</span>
+                    </div>
+                </a>
+
+                <!-- Magalu -->
+                <a href="https://www.magazinevoce.com.br/magazinecamilabispo" target="_blank" class="social-link-card">
+                    <i class="fa-solid fa-store"></i>
+                    <div class="social-link-info">
+                        <h4>Magazine Luiza</h4>
+                        <span>Loja Oficial Magalu</span>
+                    </div>
+                </a>
+
+                <!-- O Boticário -->
+                <a href="https://minhaloja.grupoboticario.com.br/loja-todaperfumada?utm_source=app_divulgar&utm_medium=mld" target="_blank" class="social-link-card">
+                    <i class="fa-solid fa-pump-soap"></i>
+                    <div class="social-link-info">
+                        <h4>Grupo O Boticário</h4>
+                        <span>Toda Perfumada</span>
+                    </div>
+                </a>
+
+                <!-- Natura -->
+                <a href="https://www.minhaloja.natura.com/consultoria/munizstore25" target="_blank" class="social-link-card">
+                    <i class="fa-solid fa-leaf"></i>
+                    <div class="social-link-info">
+                        <h4>Natura</h4>
+                        <span>Consultoria Muniz Store</span>
+                    </div>
+                </a>
+
+                <!-- Muniz Store -->
+                <a href="https://www.minhavitrine.pro/munizstore25" target="_blank" class="social-link-card">
+                    <i class="fa-solid fa-gem"></i>
+                    <div class="social-link-info">
+                        <h4>Muniz Store</h4>
+                        <span>Vitrine Exclusiva</span>
+                    </div>
+                </a>
+
+                <!-- Shein -->
+                <div class="social-link-card" style="cursor: default;">
+                    <i class="fa-solid fa-shirt"></i>
+                    <div class="social-link-info">
+                        <h4>Shein (Código)</h4>
+                        <span style="color: var(--primary-gold); font-weight: bold;">CUPOM: A4SRS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Formação IMPARÁVEL - <span class="text-camila">Camila Muniz</span>. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT EXCLUSIVO E OTIMIZADO -->
+    <script>
+        // 1. EFEITO DE DIGITAÇÃO ELEGANTE NA HERO (TYPING EFFECT)
+        const textToType = '"Você não precisa estar pronta, basta COMEÇAR."';
+        const taglineElem = document.getElementById('heroTagline');
+        let charIndex = 0;
+
+        function typeEffect() {
+            if (charIndex < textToType.length) {
+                taglineElem.innerHTML += textToType.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeEffect, 45);
+            }
+        }
+        window.addEventListener('DOMContentLoaded', typeEffect);
+
+        // 2. HEADER FIXO (STICKY NAV) AO ROLAR A PÁGINA
+        const stickyNav = document.getElementById('stickyNav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                stickyNav.classList.add('show');
+            } else {
+                stickyNav.classList.remove('show');
+            }
+        }, { passive: true });
+
+        // 3. ANIMAÇÃO DE REVELAÇÃO AO ROLAR (SCROLL REVEAL VIA INTERSECTION OBSERVER)
+        const revealElements = document.querySelectorAll('.reveal');
+        const observerOptions = {
+            root: null,
+            threshold: 0.12,
+            rootMargin: "0px"
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // 4. EFEITO HOVER TILT 3D SUTIL NOS CARDS
+        const tiltCards = document.querySelectorAll('.obj-card, .learn-card, .social-link-card');
+        tiltCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                card.style.transform = `perspective(1000px) rotateX(${-y / 20}deg) rotateY(${x / 20}deg) translateY(-5px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+            });
+        });
+
+        // 5. MODAL DE ZOOM DEPOIMENTOS
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modalImg');
+        const modalClose = document.getElementById('modalClose');
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+
+        testimonialCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const img = card.querySelector('img');
+                if (img) {
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt;
+                    modal.classList.add('active');
+                }
+            });
+        });
+
+        modalClose.addEventListener('click', () => modal.classList.remove('active'));
+        modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) modal.classList.remove('active');
+        });
+
+        // 6. AÇÃO DO BOTÃO
+        function cliqueMentoria() {
+            alert('Em breve as inscrições estarão abertas! Insira o link de checkout aqui.');
+        }
+    </script>
+</body>
+</html>
