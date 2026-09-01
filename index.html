@@ -83,7 +83,7 @@
             left: 0;
             width: 100%;
             padding: 10px 0;
-            background: rgba(18, 18, 18, 0.85);
+            background: rgba(18, 18, 18, 0.92);
             backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
@@ -99,6 +99,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 10px;
         }
 
         .sticky-nav-logo {
@@ -107,22 +108,47 @@
             color: var(--primary-gold);
             font-size: 1rem;
             letter-spacing: 1px;
+            white-space: nowrap;
         }
 
+        /* Botão Sticky Otimizado com Animação Pulsante Elegante */
         .sticky-nav-btn {
             background: var(--primary-gold);
             color: #000;
-            padding: 6px 16px;
+            padding: 8px 18px;
             border-radius: 20px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.8rem;
             text-transform: uppercase;
             transition: var(--transition);
+            white-space: nowrap;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse-subtle 2.5s infinite ease-in-out;
         }
 
         .sticky-nav-btn:hover {
             background: #fff;
-            box-shadow: 0 0 15px rgba(197, 160, 89, 0.6);
+            box-shadow: 0 0 15px rgba(197, 160, 89, 0.8);
+            animation: none;
+        }
+
+        /* Animação Pulsante Discreta e Elegante */
+        @keyframes pulse-subtle {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.5);
+            }
+            50% {
+                transform: scale(1.04);
+                box-shadow: 0 0 12px 3px rgba(197, 160, 89, 0.4);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(197, 160, 89, 0);
+            }
         }
 
         /* --- ELEMENTOS DE LAYOUT COMPACTADOS --- */
@@ -565,6 +591,8 @@
         .pricing {
             background: linear-gradient(180deg, var(--bg-dark) 0%, #1a1710 100%);
             text-align: center;
+            /* Margem de rolagem ajustada para compensar o header fixo ao clicar no botão */
+            scroll-margin-top: 70px;
         }
 
         .pricing-box {
@@ -595,6 +623,7 @@
             border-radius: 20px;
             text-transform: uppercase;
             font-size: 0.75rem;
+            white-space: nowrap;
         }
 
         .price-value {
@@ -712,7 +741,7 @@
             font-size: 0.8rem;
         }
 
-        /* --- RESPONSIVIDADE OTIMIZADA PARA REDUZIR A ALTURA NO CELULAR --- */
+        /* --- RESPONSIVIDADE OTIMIZADA PARA CELULAR --- */
         @media (max-width: 992px) {
             .about-grid {
                 grid-template-columns: 1fr;
@@ -730,8 +759,24 @@
         }
 
         @media (max-width: 576px) {
+            /* AJUSTE DO STICKY NAV NO CELULAR */
+            .sticky-nav {
+                padding: 8px 0;
+            }
+
+            .sticky-nav-logo {
+                font-size: 0.85rem;
+            }
+
+            .sticky-nav-btn {
+                padding: 8px 14px;
+                font-size: 0.75rem;
+                letter-spacing: 0.5px;
+                flex-shrink: 0;
+            }
+
             .section-padding {
-                padding: 40px 0; /* Suave redução nas seções */
+                padding: 40px 0;
             }
 
             .hero {
@@ -759,7 +804,7 @@
                 min-height: auto;
             }
 
-            /* AJUSTE FIXADO DA FOTO DA CAMILA: Mantém enquadramento original sem cortar a cabeça */
+            /* FOTO DA CAMILA: Mantém enquadramento original no celular sem cortar */
             .about-img-box img {
                 max-width: 82%;
                 height: auto;
@@ -795,7 +840,7 @@
                 margin-top: 5px;
             }
 
-            /* Grids em 2 colunas para economizar altura vertical de forma otimizada */
+            /* Grids em 2 colunas no celular */
             .objective-cards {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
