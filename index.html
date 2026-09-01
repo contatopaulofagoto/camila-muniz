@@ -207,7 +207,7 @@
             margin-top: 20px;
         }
 
-        /* --- HERO SECTION REESTRUTURADA --- */
+        /* --- HERO SECTION --- */
         .hero {
             position: relative;
             background: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.92)), url('https://i.imgur.com/5Z4T2HG.jpeg') center 25%/cover no-repeat;
@@ -282,8 +282,6 @@
             width: 100%;
             max-width: 360px;
             height: auto;
-            max-height: 480px;
-            object-fit: cover;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.6);
             border: 1px solid rgba(197, 160, 89, 0.4);
@@ -733,16 +731,16 @@
 
         @media (max-width: 576px) {
             .section-padding {
-                padding: 35px 0; /* Diminui muito a altura das seções no celular */
+                padding: 40px 0; /* Suave redução nas seções */
             }
 
             .hero {
                 background-position: center 25%;
-                padding: 40px 0 50px 0; /* Encurta a capa */
+                padding: 45px 0 50px 0;
             }
 
             .hero-brand-logo {
-                max-width: 110px;
+                max-width: 120px;
                 margin-bottom: 12px;
             }
 
@@ -761,8 +759,10 @@
                 min-height: auto;
             }
 
+            /* AJUSTE FIXADO DA FOTO DA CAMILA: Mantém enquadramento original sem cortar a cabeça */
             .about-img-box img {
-                max-height: 320px; /* Imagem mais curta na visão mobile */
+                max-width: 82%;
+                height: auto;
             }
 
             .section-header {
@@ -795,7 +795,7 @@
                 margin-top: 5px;
             }
 
-            /* Exibe grids em 2 colunas para economizar altura vertical */
+            /* Grids em 2 colunas para economizar altura vertical de forma otimizada */
             .objective-cards {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
