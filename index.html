@@ -507,11 +507,13 @@
             overflow: hidden;
             background: #000;
             margin-bottom: 8px;
+            aspect-ratio: 9 / 16; /* Fixa proporção para impedir saltos de layout ao carregar */
+            width: 100%;
         }
 
         .testimonial-img-wrapper img {
             width: 100%;
-            height: auto;
+            height: 100%;
             display: block;
             object-fit: cover;
             border-radius: 6px;
@@ -591,8 +593,6 @@
         .pricing {
             background: linear-gradient(180deg, var(--bg-dark) 0%, #1a1710 100%);
             text-align: center;
-            /* Margem de rolagem ajustada para compensar o header fixo ao clicar no botão */
-            scroll-margin-top: 70px;
         }
 
         .pricing-box {
@@ -804,7 +804,6 @@
                 min-height: auto;
             }
 
-            /* FOTO DA CAMILA: Mantém enquadramento original no celular sem cortar */
             .about-img-box img {
                 max-width: 82%;
                 height: auto;
@@ -840,7 +839,6 @@
                 margin-top: 5px;
             }
 
-            /* Grids em 2 colunas no celular */
             .objective-cards {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
@@ -1137,7 +1135,7 @@
     <!-- OFERTA E PREÇO -->
     <section id="oferta" class="pricing section-padding reveal">
         <div class="container">
-            <div class="pricing-box">
+            <div class="pricing-box" id="pricingBox">
                 <div class="pricing-badge">Acesso Imediato</div>
                 <h3 style="font-family: var(--font-title); font-size: 1.8rem;">Mentoria IMPARÁVEL</h3>
                 
@@ -1268,6 +1266,38 @@
 
     <!-- JAVASCRIPT EXCLUSIVO E OTIMIZADO -->
     <script>
+        // FUNÇÃO DE ROLAGEM DINÂMICA PRECIOSA E CENTRALIZADA
+        function scrollToOferta(e) {
+            if (e) e.preventDefault();
+            const target = document.getElementById('pricingBox');
+            if (!target) return;
+
+            // Ativa elementos ocultos antes de calcular para evitar desvio
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+
+            const performScroll = () => {
+                const elementRect = target.getBoundingClientRect();
+                const absoluteElementTop = elementRect.top + window.pageYOffset;
+                // Centraliza a caixa da oferta na tela descartando a altura do header flutuante
+                const middleOffset = absoluteElementTop - (window.innerHeight / 2) + (elementRect.height / 2);
+
+                window.scrollTo({
+                    top: Math.max(0, middleOffset),
+                    behavior: 'smooth'
+                });
+            };
+
+            // Execução imediata e re-confirmação para garantir a posição após pequenos atrasos de renderização
+            performScroll();
+            setTimeout(performScroll, 150);
+            setTimeout(performScroll, 400);
+        }
+
+        // Aplicação do clique para todos os links referentes a #oferta
+        document.querySelectorAll('a[href="#oferta"]').forEach(anchor => {
+            anchor.addEventListener('click', scrollToOferta);
+        });
+
         // 1. EFEITO DE DIGITAÇÃO ELEGANTE NA HERO (TYPING EFFECT)
         const textToType = '"Você não precisa estar pronta, basta COMEÇAR."';
         const taglineElem = document.getElementById('heroTagline');
