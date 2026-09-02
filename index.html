@@ -5,29 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formação IMPARÁVEL | Camila Muniz</title>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome (Ícones) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- RESET & VARIÁVEIS GLAMOUR/ELEGANTES --- */
+        /* --- PALETA DE CORES CLEAN & ELEGANTE ---
+           #ECE3DB: Fundo Claro Nude / Areia
+           #D3A29D: Rosa Azeitado / Rose Gold Suave
+           #A36361: Terracota Elegante / Destaques e Contrastes
+        */
         :root {
-            --primary-gold: #c5a059;
-            --primary-gold-hover: #b08b46;
-            --camila-rose: #D3A29D;
-            --bg-dark: #121212;
-            --bg-card: #1e1e1e;
-            --bg-light: #fdfbf7;
-            --text-dark: #2c2c2c;
-            --text-light: #f4f4f4;
-            --text-muted: #a0a0a0;
+            --bg-light: #ECE3DB;
+            --bg-card: #FFFFFF;
+            --rose-accent: #D3A29D;
+            --terracotta-dark: #A36361;
+            --terracotta-hover: #8B4E4D;
+            --text-dark: #3A2E2B;
+            --text-muted: #6E625F;
+            --border-color: rgba(163, 99, 97, 0.18);
+            
             --font-title: 'Playfair Display', serif;
             --font-body: 'Montserrat', sans-serif;
-            --font-signature: 'Great Vibes', cursive;
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
@@ -43,9 +44,9 @@
 
         body {
             font-family: var(--font-body);
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.5;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
@@ -58,12 +59,12 @@
             list-style: none;
         }
 
-        /* Classe para destacar o nome da Camila Muniz */
         .text-camila {
-            color: var(--camila-rose) !important;
+            color: var(--terracotta-dark) !important;
+            font-weight: 600;
         }
 
-        /* --- ANIMAÇÕES JS (SCROLL REVEAL) --- */
+        /* --- ANIMAÇÕES (SCROLL REVEAL) --- */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -82,13 +83,14 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 10px 0;
-            background: rgba(18, 18, 18, 0.92);
+            padding: 12px 0;
+            background: rgba(236, 227, 219, 0.94);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            border-bottom: 1px solid var(--border-color);
             transform: translateY(-100%);
             transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
 
         .sticky-nav.show {
@@ -105,21 +107,21 @@
         .sticky-nav-logo {
             font-family: var(--font-title);
             font-weight: 700;
-            color: var(--primary-gold);
-            font-size: 1rem;
+            color: var(--terracotta-dark);
+            font-size: 1.05rem;
             letter-spacing: 1px;
             white-space: nowrap;
         }
 
-        /* Botão Sticky Otimizado com Animação Pulsante Elegante */
         .sticky-nav-btn {
-            background: var(--primary-gold);
-            color: #000;
-            padding: 8px 18px;
+            background: var(--terracotta-dark);
+            color: #fff;
+            padding: 8px 20px;
             border-radius: 20px;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 0.8rem;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
             transition: var(--transition);
             white-space: nowrap;
             text-align: center;
@@ -130,48 +132,47 @@
         }
 
         .sticky-nav-btn:hover {
-            background: #fff;
-            box-shadow: 0 0 15px rgba(197, 160, 89, 0.8);
+            background: var(--terracotta-hover);
+            box-shadow: 0 4px 15px rgba(163, 99, 97, 0.3);
             animation: none;
         }
 
-        /* Animação Pulsante Discreta e Elegante */
         @keyframes pulse-subtle {
             0% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.5);
+                box-shadow: 0 0 0 0 rgba(163, 99, 97, 0.4);
             }
             50% {
-                transform: scale(1.04);
-                box-shadow: 0 0 12px 3px rgba(197, 160, 89, 0.4);
+                transform: scale(1.03);
+                box-shadow: 0 0 12px 2px rgba(163, 99, 97, 0.25);
             }
             100% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(197, 160, 89, 0);
+                box-shadow: 0 0 0 0 rgba(163, 99, 97, 0);
             }
         }
 
-        /* --- ELEMENTOS DE LAYOUT COMPACTADOS --- */
+        /* --- LAYOUT & ESTRUTURA --- */
         .container {
             width: 92%;
-            max-width: 1100px;
+            max-width: 1050px;
             margin: 0 auto;
             padding: 0 10px;
         }
 
         .section-padding {
-            padding: 60px 0;
+            padding: 55px 0;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
         }
 
         .section-header h2 {
             font-family: var(--font-title);
-            font-size: 2.2rem;
-            color: var(--primary-gold);
+            font-size: 2.1rem;
+            color: var(--terracotta-dark);
             margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -179,7 +180,7 @@
 
         .section-header p {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.98rem;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -187,16 +188,16 @@
         /* --- BOTÃO CTA --- */
         .btn-cta {
             display: inline-block;
-            background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+            background: linear-gradient(135deg, var(--rose-accent) 0%, var(--terracotta-dark) 100%);
             color: #fff;
             font-family: var(--font-body);
             font-weight: 700;
-            font-size: 1rem;
-            padding: 16px 30px;
+            font-size: 0.98rem;
+            padding: 16px 32px;
             border-radius: 50px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 8px 20px rgba(197, 160, 89, 0.3);
+            box-shadow: 0 8px 20px rgba(163, 99, 97, 0.25);
             transition: var(--transition);
             text-align: center;
             border: none;
@@ -214,7 +215,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.25), transparent);
             transform: rotate(30deg);
             transition: 0.8s;
         }
@@ -224,66 +225,59 @@
         }
 
         .btn-cta:hover {
-            transform: translateY(-3px) scale(1.01);
-            box-shadow: 0 12px 28px rgba(197, 160, 89, 0.4);
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 12px 25px rgba(163, 99, 97, 0.35);
         }
 
         .cta-container {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 18px;
         }
 
         /* --- HERO SECTION --- */
         .hero {
             position: relative;
-            background: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.92)), url('https://i.imgur.com/5Z4T2HG.jpeg') center 25%/cover no-repeat;
-            padding: 65px 0 65px 0;
+            background: linear-gradient(180deg, rgba(236, 227, 219, 0.85) 0%, #ECE3DB 100%), url('https://i.imgur.com/5Z4T2HG.jpeg') center 25%/cover no-repeat;
+            padding: 60px 0 50px 0;
             text-align: center;
-            border-bottom: 2px solid var(--primary-gold);
-            background-attachment: fixed;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .hero-brand-logo {
-            max-width: 140px;
+            max-width: 130px;
             height: auto;
             margin: 0 auto 15px auto;
             display: block;
-            filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.6));
+            filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.08));
             transition: var(--transition);
-            opacity: 0.95;
-        }
-
-        .hero-brand-logo:hover {
-            opacity: 1;
-            transform: scale(1.05);
         }
 
         .hero-title {
             font-family: var(--font-title);
-            font-size: 2.8rem;
-            color: var(--primary-gold);
+            font-size: 2.6rem;
+            color: var(--terracotta-dark);
             letter-spacing: 1.5px;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             text-transform: uppercase;
-            line-height: 1.1;
+            line-height: 1.15;
         }
 
         .hero-subtitle {
-            font-size: 1.1rem;
-            font-weight: 300;
+            font-size: 1.05rem;
+            font-weight: 500;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             text-transform: uppercase;
-            color: #ddd;
+            color: var(--text-dark);
         }
 
         .hero-tagline {
-            font-size: 1.05rem;
+            font-size: 1rem;
             max-width: 650px;
-            margin: 0 auto 25px auto;
+            margin: 0 auto 22px auto;
             color: var(--text-muted);
             font-style: italic;
-            min-height: 1.8rem;
+            min-height: 1.6rem;
         }
 
         /* --- SOBRE A CAMILA --- */
@@ -301,171 +295,129 @@
         .about-img-box {
             position: relative;
             text-align: center;
-            perspective: 1000px;
         }
 
         .about-img-box img {
             width: 100%;
-            max-width: 360px;
+            max-width: 350px;
             height: auto;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-            border: 1px solid rgba(197, 160, 89, 0.4);
-            transition: transform 0.5s ease;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(58, 46, 43, 0.08);
+            border: 4px solid var(--bg-light);
+            transition: var(--transition);
         }
 
         .about-img-box:hover img {
-            transform: scale(1.02) rotateY(-3deg);
+            transform: translateY(-4px);
         }
 
         .about-content h3 {
             font-family: var(--font-title);
             font-size: 1.8rem;
-            color: var(--primary-gold);
+            color: var(--terracotta-dark);
             margin-bottom: 12px;
         }
 
         .about-content p {
-            margin-bottom: 10px;
-            color: #ccc;
-            font-size: 0.92rem;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            font-size: 0.93rem;
             text-align: justify;
-        }
-
-        .signature {
-            font-family: var(--font-signature);
-            font-size: 2.8rem;
-            color: var(--camila-rose);
-            margin-top: 10px;
-            display: block;
+            line-height: 1.65;
         }
 
         /* --- OBJETIVO DA FORMAÇÃO --- */
         .objective-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
             gap: 15px;
             margin-top: 25px;
         }
 
         .obj-card {
             background: var(--bg-card);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 3px solid var(--primary-gold);
+            padding: 22px 18px;
+            border-radius: 12px;
+            border-top: 3px solid var(--rose-accent);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
             transition: var(--transition);
-            transform-style: preserve-3d;
         }
 
         .obj-card:hover {
-            transform: translateY(-5px);
-            background: #252525;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            transform: translateY(-4px);
+            border-top-color: var(--terracotta-dark);
+            box-shadow: 0 8px 22px rgba(163, 99, 97, 0.12);
         }
 
         .obj-card i {
-            font-size: 1.6rem;
-            color: var(--primary-gold);
+            font-size: 1.5rem;
+            color: var(--terracotta-dark);
             margin-bottom: 10px;
             transition: var(--transition);
         }
 
-        .obj-card:hover i {
-            transform: scale(1.15);
-        }
-
         .obj-card p {
-            color: #ddd;
-            font-size: 0.9rem;
-            line-height: 1.4;
+            color: var(--text-dark);
+            font-size: 0.88rem;
+            line-height: 1.5;
         }
 
         .objective-highlight {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 28px;
             font-family: var(--font-title);
-            font-size: 1.25rem;
-            color: var(--primary-gold);
-            background: rgba(197, 160, 89, 0.1);
-            padding: 18px;
-            border-radius: 8px;
-            border: 1px dashed var(--primary-gold);
-        }
-
-        /* --- O QUE VAI APRENDER --- */
-        .learn-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 15px;
-        }
-
-        .learn-card {
-            background: var(--bg-card);
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #333;
-            transition: var(--transition);
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .learn-card:hover {
-            border-color: var(--primary-gold);
-            transform: translateY(-4px);
-            box-shadow: 0 6px 15px rgba(197, 160, 89, 0.15);
-        }
-
-        .learn-card i {
-            font-size: 1.3rem;
-            color: var(--primary-gold);
-            margin-top: 3px;
-        }
-
-        .learn-card p {
-            color: #ccc;
-            font-size: 0.9rem;
-            line-height: 1.4;
+            font-size: 1.15rem;
+            color: var(--terracotta-dark);
+            background: rgba(211, 162, 157, 0.15);
+            padding: 18px 22px;
+            border-radius: 12px;
+            border: 1px solid var(--rose-accent);
         }
 
         /* --- DIFERENCIAL --- */
         .differential {
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1920&auto=format&fit=crop') center/cover fixed;
-            text-align: center;
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .differential-content {
-            max-width: 800px;
-            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 35px;
+            align-items: center;
         }
 
-        .differential p {
-            font-size: 1rem;
-            margin-bottom: 12px;
-            color: #ddd;
+        .differential-text p {
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+            color: var(--text-dark);
+            text-align: justify;
+            line-height: 1.65;
         }
 
         /* --- PARA QUEM É --- */
         .target-list {
-            max-width: 800px;
+            max-width: 780px;
             margin: 0 auto;
             background: var(--bg-card);
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            padding: 28px 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
         }
 
         .target-item {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-            color: #ddd;
+            margin-bottom: 14px;
+            font-size: 0.93rem;
+            color: var(--text-dark);
         }
 
         .target-item i {
-            color: var(--primary-gold);
+            color: var(--terracotta-dark);
             font-size: 1.1rem;
         }
 
@@ -482,13 +434,13 @@
         }
 
         .testimonial-card {
-            background: #171717;
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            border-radius: 10px;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
             padding: 10px;
             text-align: center;
             transition: var(--transition);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -496,18 +448,18 @@
         }
 
         .testimonial-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            border-color: var(--primary-gold);
-            box-shadow: 0 10px 22px rgba(197, 160, 89, 0.3);
+            transform: translateY(-4px);
+            border-color: var(--rose-accent);
+            box-shadow: 0 8px 20px rgba(163, 99, 97, 0.15);
         }
 
         .testimonial-img-wrapper {
             position: relative;
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
-            background: #000;
+            background: #fff;
             margin-bottom: 8px;
-            aspect-ratio: 9 / 16; /* Fixa proporção para impedir saltos de layout ao carregar */
+            aspect-ratio: 9 / 16;
             width: 100%;
         }
 
@@ -516,19 +468,19 @@
             height: 100%;
             display: block;
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 8px;
             transition: var(--transition);
         }
 
         .testimonial-caption {
             font-size: 0.8rem;
-            color: var(--primary-gold);
+            color: var(--terracotta-dark);
             font-weight: 600;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 6px;
-            padding-top: 2px;
+            padding-top: 4px;
         }
 
         .testimonial-caption i {
@@ -544,7 +496,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.92);
+            background-color: rgba(58, 46, 43, 0.85);
+            backdrop-filter: blur(5px);
             z-index: 9999;
             justify-content: center;
             align-items: center;
@@ -561,10 +514,10 @@
         .modal-content {
             max-width: 92%;
             max-height: 85vh;
-            border-radius: 8px;
-            box-shadow: 0 5px 30px rgba(197, 160, 89, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             object-fit: contain;
-            border: 1px solid var(--primary-gold);
+            border: 2px solid var(--rose-accent);
             transform: scale(0.9);
             transition: transform 0.3s ease;
         }
@@ -577,7 +530,7 @@
             position: absolute;
             top: 15px;
             right: 20px;
-            font-size: 30px;
+            font-size: 32px;
             color: #fff;
             cursor: pointer;
             font-weight: bold;
@@ -586,84 +539,87 @@
         }
 
         .modal-close:hover {
-            color: var(--primary-gold);
+            color: var(--rose-accent);
         }
 
         /* --- OFERTA / PREÇO --- */
         .pricing {
-            background: linear-gradient(180deg, var(--bg-dark) 0%, #1a1710 100%);
+            background: linear-gradient(180deg, var(--bg-light) 0%, rgba(211, 162, 157, 0.25) 100%);
             text-align: center;
         }
 
         .pricing-box {
             background: var(--bg-card);
-            max-width: 580px;
+            max-width: 540px;
             margin: 0 auto;
-            padding: 35px 20px;
-            border-radius: 15px;
-            border: 2px solid var(--primary-gold);
+            padding: 38px 24px 30px 24px;
+            border-radius: 20px;
+            border: 2px solid var(--rose-accent);
             position: relative;
-            box-shadow: 0 0 25px rgba(197, 160, 89, 0.2);
+            box-shadow: 0 10px 30px rgba(163, 99, 97, 0.12);
             transition: var(--transition);
         }
 
         .pricing-box:hover {
-            box-shadow: 0 0 35px rgba(197, 160, 89, 0.35);
+            box-shadow: 0 15px 35px rgba(163, 99, 97, 0.18);
         }
 
         .pricing-badge {
             position: absolute;
-            top: -12px;
+            top: -14px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--primary-gold);
-            color: #000;
-            font-weight: 700;
-            padding: 4px 16px;
+            background: var(--terracotta-dark);
+            color: #fff;
+            font-weight: 600;
+            padding: 5px 20px;
             border-radius: 20px;
             text-transform: uppercase;
             font-size: 0.75rem;
+            letter-spacing: 0.5px;
             white-space: nowrap;
         }
 
         .price-value {
             font-family: var(--font-title);
             font-size: 3rem;
-            color: var(--primary-gold);
-            margin: 15px 0 2px 0;
+            color: var(--terracotta-dark);
+            margin: 12px 0 2px 0;
+            font-weight: 700;
         }
 
         .price-value span {
             font-size: 1.1rem;
-            color: #fff;
+            color: var(--text-dark);
+            font-weight: 500;
         }
 
         .price-details {
             color: var(--text-muted);
-            margin-bottom: 20px;
-            font-size: 0.9rem;
+            margin-bottom: 22px;
+            font-size: 0.88rem;
         }
 
         .features-list {
             text-align: left;
             max-width: 380px;
-            margin: 0 auto 20px auto;
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
-            padding: 15px 0;
+            margin: 0 auto 22px auto;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
         }
 
         .features-list li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 8px;
-            color: #ddd;
-            font-size: 0.9rem;
+            gap: 10px;
+            color: var(--text-dark);
+            font-size: 0.88rem;
         }
 
         .features-list li i {
-            color: var(--primary-gold);
+            color: var(--terracotta-dark);
         }
 
         .guarantee-box {
@@ -671,13 +627,13 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
-            margin-top: 20px;
+            margin-top: 22px;
             color: var(--text-muted);
         }
 
         .guarantee-box i {
             font-size: 1.6rem;
-            color: var(--primary-gold);
+            color: var(--terracotta-dark);
         }
 
         /* --- ECOSSISTEMA / REDES SOCIAIS --- */
@@ -687,43 +643,44 @@
 
         .links-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
             gap: 12px;
         }
 
         .social-link-card {
-            background: #252525;
+            background: var(--bg-light);
             padding: 14px;
-            border-radius: 8px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             gap: 12px;
-            border: 1px solid transparent;
+            border: 1px solid var(--border-color);
             transition: var(--transition);
         }
 
         .social-link-card:hover {
-            border-color: var(--primary-gold);
+            border-color: var(--rose-accent);
             transform: translateY(-3px);
-            background: #2a2a2a;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            background: #fff;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
         }
 
         .social-link-card i {
-            font-size: 1.5rem;
-            color: var(--primary-gold);
+            font-size: 1.4rem;
+            color: var(--terracotta-dark);
             width: 25px;
             text-align: center;
             transition: var(--transition);
         }
 
         .social-link-card:hover i {
-            transform: scale(1.15);
+            transform: scale(1.1);
         }
 
         .social-link-info h4 {
-            font-size: 0.9rem;
-            color: #fff;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            font-weight: 600;
         }
 
         .social-link-info span {
@@ -733,33 +690,35 @@
 
         /* --- FOOTER --- */
         footer {
-            background-color: #0a0a0a;
-            padding: 20px 0;
+            background-color: var(--bg-light);
+            padding: 22px 0;
             text-align: center;
-            border-top: 1px solid #222;
+            border-top: 1px solid var(--border-color);
             color: var(--text-muted);
             font-size: 0.8rem;
         }
 
         /* --- RESPONSIVIDADE OTIMIZADA PARA CELULAR --- */
         @media (max-width: 992px) {
-            .about-grid {
+            .about-grid,
+            .differential-content {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 20px;
+                gap: 22px;
             }
 
-            .about-content p {
+            .about-content p,
+            .differential-text p {
                 text-align: left;
             }
 
-            .about-img-box {
-                margin-bottom: 10px;
+            .about-img-box,
+            .differential-content .about-img-box {
+                margin-bottom: 5px;
             }
         }
 
         @media (max-width: 576px) {
-            /* AJUSTE DO STICKY NAV NO CELULAR */
             .sticky-nav {
                 padding: 8px 0;
             }
@@ -770,8 +729,7 @@
 
             .sticky-nav-btn {
                 padding: 8px 14px;
-                font-size: 0.75rem;
-                letter-spacing: 0.5px;
+                font-size: 0.72rem;
                 flex-shrink: 0;
             }
 
@@ -780,33 +738,31 @@
             }
 
             .hero {
-                background-position: center 25%;
-                padding: 45px 0 50px 0;
+                padding: 45px 0 40px 0;
             }
 
             .hero-brand-logo {
-                max-width: 120px;
-                margin-bottom: 12px;
+                max-width: 110px;
+                margin-bottom: 10px;
             }
 
             .hero-title {
-                font-size: 1.9rem;
+                font-size: 1.85rem;
             }
 
             .hero-subtitle {
                 font-size: 0.85rem;
-                margin-bottom: 15px;
+                margin-bottom: 12px;
             }
 
             .hero-tagline {
-                font-size: 0.9rem;
-                margin-bottom: 20px;
+                font-size: 0.88rem;
+                margin-bottom: 18px;
                 min-height: auto;
             }
 
             .about-img-box img {
                 max-width: 82%;
-                height: auto;
             }
 
             .section-header {
@@ -814,29 +770,24 @@
             }
 
             .section-header h2 {
-                font-size: 1.5rem;
+                font-size: 1.45rem;
             }
 
             .section-header p {
-                font-size: 0.88rem;
+                font-size: 0.85rem;
             }
 
             .price-value {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
             }
 
             .btn-cta {
-                font-size: 0.88rem;
+                font-size: 0.85rem;
                 padding: 14px 16px;
             }
 
             .target-list {
-                padding: 18px 12px;
-            }
-
-            .signature {
-                font-size: 2.2rem;
-                margin-top: 5px;
+                padding: 20px 15px;
             }
 
             .objective-cards {
@@ -845,16 +796,16 @@
             }
 
             .obj-card {
-                padding: 12px;
+                padding: 14px 10px;
             }
 
             .obj-card i {
-                font-size: 1.3rem;
+                font-size: 1.25rem;
                 margin-bottom: 6px;
             }
 
             .obj-card p {
-                font-size: 0.8rem;
+                font-size: 0.78rem;
             }
 
             .testimonials-grid {
@@ -882,18 +833,17 @@
             }
 
             .social-link-info h4 {
-                font-size: 0.8rem;
+                font-size: 0.78rem;
             }
 
             .social-link-info span {
-                font-size: 0.68rem;
+                font-size: 0.65rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- STICKY HEADER FLUTUANTE -->
     <nav class="sticky-nav" id="stickyNav">
         <div class="container">
             <span class="sticky-nav-logo">IMPARÁVEL | <span class="text-camila">Camila Muniz</span></span>
@@ -901,7 +851,6 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <header class="hero" id="hero">
         <div class="container">
             <img src="https://i.imgur.com/GhSWSxg.png" alt="Logo Camila Muniz" class="hero-brand-logo">
@@ -915,7 +864,6 @@
         </div>
     </header>
 
-    <!-- SOBRE A CAMILA MUNIZ -->
     <section class="about section-padding reveal">
         <div class="container">
             <div class="about-grid">
@@ -929,14 +877,11 @@
                     <p>Hoje, compartilho aquilo que aprendi ao longo dessa caminhada, ajudando outras mulheres a enxergarem que é possível começar do zero e construir sua própria trajetória no digital, com estratégia, conhecimento e ação.</p>
                     <p>CEO da Formação IMPARÁVEL, ensino de forma prática e descomplicada estratégias para quem deseja entrar no mercado digital, trabalhar com plataformas, criar conteúdo e desenvolver novas possibilidades de renda através da internet.</p>
                     <p>Aqui você encontra meus projetos, lojas, canais, conteúdos e tudo o que faz parte do meu universo no digital.</p>
-                    
-                    <span class="signature">Camila Muniz</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PRINCIPAL OBJETIVO -->
     <section class="section-padding reveal">
         <div class="container">
             <div class="section-header">
@@ -944,7 +889,7 @@
                 <p>Preparar mulheres para serem protagonistas da sua própria história</p>
             </div>
             
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 20px auto; color: #ccc; font-size: 0.92rem;">
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 20px auto; color: var(--text-dark); font-size: 0.92rem;">
                 Talvez você tenha passado anos trocando tempo por dinheiro, seguindo uma rotina que nem sempre permite escolher onde estar, com quem estar ou como viver seus dias.
             </p>
 
@@ -973,68 +918,20 @@
         </div>
     </section>
 
-    <!-- O QUE VAI APRENDER -->
-    <section class="section-padding reveal" style="background-color: var(--bg-card);">
-        <div class="container">
-            <div class="section-header">
-                <h2>O que você vai aprender na IMPARÁVEL</h2>
-            </div>
-
-            <div class="learn-grid">
-                <div class="learn-card">
-                    <i class="fa-solid fa-compass"></i>
-                    <p><strong>Direção Inicial:</strong> Por onde começar, saber o que fazer e quais caminhos seguir no digital.</p>
-                </div>
-                <div class="learn-card">
-                    <i class="fa-solid fa-lightbulb"></i>
-                    <p><strong>Aplicações Simples:</strong> Estratégias práticas que você pode aplicar facilmente no seu dia a dia.</p>
-                </div>
-                <div class="learn-card">
-                    <i class="fa-solid fa-chart-line"></i>
-                    <p><strong>Vendas Flexíveis:</strong> Aprenda a vender no digital, aparecendo ou sem aparecer.</p>
-                </div>
-                <div class="learn-card">
-                    <i class="fa-solid fa-store"></i>
-                    <p><strong>Marketplaces:</strong> Oportunidades em plataformas e como utilizá-las a seu favor.</p>
-                </div>
-                <div class="learn-card">
-                    <i class="fa-solid fa-comments"></i>
-                    <p><strong>Conteúdo que Conecta:</strong> Criação estratégica para atrair as pessoas certas ao seu perfil.</p>
-                </div>
-                <div class="learn-card">
-                    <i class="fa-solid fa-user-check"></i>
-                    <p><strong>Perfil de Sucesso:</strong> Como estruturar um perfil bonito e focado em vendas.</p>
-                </div>
-                <div class="learn-card">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    <p><strong>Ferramentas Modernas:</strong> Uso descomplicado de Canva, CapCut e Inteligência Artificial para conteúdos profissionais.</p>
-                </div>
-                <div class="learn-card">
-                    <i class="fa-solid fa-rocket"></i>
-                    <p><strong>Ação Prática:</strong> Direção completa para sair da teoria e construir sua jornada de fato.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DIFERENCIAL -->
     <section class="differential section-padding reveal">
         <div class="container">
             <div class="differential-content">
-                <div class="section-header">
-                    <h2>O Meu Diferencial</h2>
+                <div class="about-img-box">
+                    <img src="https://i.imgur.com/3WSCcIZ.jpeg" alt="Camila Muniz - O Diferencial">
                 </div>
-                <p>Eu não ensino apenas o que funciona no papel. Eu ensino o que aprendi vivendo o digital na prática.</p>
-                <p>Minha metodologia une estratégia, prática e linguagem simples, para que você consiga entender, aplicar e começar a construir sua própria jornada, mesmo que esteja começando do zero.</p>
-                <p><strong>Aqui você não encontra fórmulas mágicas ou promessas de dinheiro fácil.</strong> Encontra direção, conhecimento e estratégias para transformar o digital em uma possibilidade real.</p>
-                <p style="font-size: 1.1rem; color: var(--primary-gold); font-weight: 600; margin-top: 20px;">
-                    Eu não quero apenas te ensinar. Quero te mostrar o caminho para você se tornar IMPARÁVEL.
-                </p>
+                <div class="differential-text">
+                    <p>Eu não ensino apenas o que funciona no papel. Eu ensino o que aprendi vivendo o digital na prática.</p>
+                    <p>Minha metodologia une estratégia, prática e linguagem simples, para que você consiga entender, aplicar e começar a construir sua própria jornada, mesmo que esteja começando do zero.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- PARA QUEM É -->
     <section class="section-padding reveal">
         <div class="container">
             <div class="section-header">
@@ -1044,33 +941,32 @@
 
             <div class="target-list">
                 <div class="target-item">
-                    <i class="fa-solid fa-check-circle"></i>
+                    <i class="fa-solid fa-circle-check"></i>
                     <span>Está começando do zero e se sente perdida no caminho.</span>
                 </div>
                 <div class="target-item">
-                    <i class="fa-solid fa-check-circle"></i>
+                    <i class="fa-solid fa-circle-check"></i>
                     <span>Quer aprender a vender pela internet de forma estratégica.</span>
                 </div>
                 <div class="target-item">
-                    <i class="fa-solid fa-check-circle"></i>
+                    <i class="fa-solid fa-circle-check"></i>
                     <span>Busca novas possibilidades de renda através do digital.</span>
                 </div>
                 <div class="target-item">
-                    <i class="fa-solid fa-check-circle"></i>
+                    <i class="fa-solid fa-circle-check"></i>
                     <span>Já tentou diversas formas de fazer dinheiro, mas sente que falta direção.</span>
                 </div>
                 <div class="target-item">
-                    <i class="fa-solid fa-check-circle"></i>
+                    <i class="fa-solid fa-circle-check"></i>
                     <span>Quer aprender estratégias práticas sem precisar ser especialista.</span>
                 </div>
-                <p style="text-align: center; margin-top: 20px; font-weight: 600; color: var(--primary-gold); font-size: 0.92rem;">
+                <p style="text-align: center; margin-top: 22px; font-weight: 600; color: var(--terracotta-dark); font-size: 0.92rem;">
                     Se você está disposta a aprender, aplicar e dar o primeiro passo, a IMPARÁVEL é para você.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- DEPOIMENTOS REAIS DE ALUNAS -->
     <section class="testimonials section-padding reveal">
         <div class="container">
             <div class="section-header">
@@ -1079,7 +975,6 @@
             </div>
 
             <div class="testimonials-grid">
-                <!-- Depoimento 1 -->
                 <div class="testimonial-card">
                     <div class="testimonial-img-wrapper">
                         <img src="https://i.imgur.com/8wvlEWR.jpeg" alt="Depoimento Aluna Mentoria 1" class="print-img" loading="lazy">
@@ -1090,7 +985,6 @@
                     </div>
                 </div>
 
-                <!-- Depoimento 2 -->
                 <div class="testimonial-card">
                     <div class="testimonial-img-wrapper">
                         <img src="https://i.imgur.com/Q1SKtcE.jpeg" alt="Depoimento Aluna Mentoria 2" class="print-img" loading="lazy">
@@ -1101,7 +995,6 @@
                     </div>
                 </div>
 
-                <!-- Depoimento 3 -->
                 <div class="testimonial-card">
                     <div class="testimonial-img-wrapper">
                         <img src="https://i.imgur.com/OkGeCVj.jpeg" alt="Depoimento Aluna Mentoria 3" class="print-img" loading="lazy">
@@ -1112,7 +1005,6 @@
                     </div>
                 </div>
 
-                <!-- Depoimento 4 -->
                 <div class="testimonial-card">
                     <div class="testimonial-img-wrapper">
                         <img src="https://i.imgur.com/hXNKjcm.jpeg" alt="Depoimento Aluna Mentoria 4" class="print-img" loading="lazy">
@@ -1126,18 +1018,16 @@
         </div>
     </section>
 
-    <!-- ESTRUTURA DO MODAL DE ZOOM PARA OS DEPOIMENTOS -->
     <div class="modal-overlay" id="modal">
         <span class="modal-close" id="modalClose">&times;</span>
         <img class="modal-content" id="modalImg" alt="Depoimento Ampliado">
     </div>
 
-    <!-- OFERTA E PREÇO -->
     <section id="oferta" class="pricing section-padding reveal">
         <div class="container">
             <div class="pricing-box" id="pricingBox">
                 <div class="pricing-badge">Acesso Imediato</div>
-                <h3 style="font-family: var(--font-title); font-size: 1.8rem;">Mentoria IMPARÁVEL</h3>
+                <h3 style="font-family: var(--font-title); font-size: 1.8rem; color: var(--terracotta-dark);">Mentoria IMPARÁVEL</h3>
                 
                 <div class="price-value">
                     <span>12x de</span> R$ 19,70
@@ -1148,7 +1038,7 @@
                     <li><i class="fa-solid fa-star"></i> <strong>1 Ano de Acesso</strong> (Aulas gravadas e ao vivo)</li>
                     <li><i class="fa-solid fa-gift"></i> <strong>BÔNUS EXCLUSIVO:</strong> Packs para story e post</li>
                     <li><i class="fa-solid fa-credit-card"></i> Pagamento no Cartão (até 12x) ou Pix</li>
-                    <li><i class="fa-solid fa-arrows-rotate"></i> Renovação anual para se manter atualizada</li>
+                    <li><i class="fa-solid fa-rotate"></i> Renovação anual para se manter atualizada</li>
                 </ul>
 
                 <button class="btn-cta" onclick="cliqueMentoria()">QUERO ME TORNAR IMPARÁVEL</button>
@@ -1156,24 +1046,22 @@
                 <div class="guarantee-box">
                     <i class="fa-solid fa-shield-halved"></i>
                     <div style="text-align: left;">
-                        <strong style="color: #fff; display: block; font-size: 0.9rem;">Garantia Incondicional</strong>
-                        <span style="font-size: 0.8rem;">Teste por 07 dias. Se não gostar, devolvemos seu dinheiro.</span>
+                        <strong style="color: var(--text-dark); display: block; font-size: 0.88rem;">Garantia Incondicional</strong>
+                        <span style="font-size: 0.78rem;">Teste por 07 dias. Se não gostar, devolvemos seu dinheiro.</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ECOSSISTEMA E REDES SOCIAIS -->
     <section class="ecosystem section-padding reveal">
         <div class="container">
             <div class="section-header">
                 <h2>Universo <span class="text-camila">Camila Muniz</span></h2>
-                <p>Conheça meus projetos, lojas parceiras e canais oficiais</p>
+                <p>Conheça minhas lojas parceiras e canais oficiais</p>
             </div>
 
             <div class="links-grid">
-                <!-- Instagram -->
                 <a href="https://www.instagram.com/camilamunizmentora?igsi=MWo4ZnA4aXp3bmU1Zw" target="_blank" class="social-link-card">
                     <i class="fa-brands fa-instagram"></i>
                     <div class="social-link-info">
@@ -1182,7 +1070,6 @@
                     </div>
                 </a>
 
-                <!-- WhatsApp -->
                 <a href="https://wa.me/message/QXNVYSTM64FLI1" target="_blank" class="social-link-card">
                     <i class="fa-brands fa-whatsapp"></i>
                     <div class="social-link-info">
@@ -1191,7 +1078,6 @@
                     </div>
                 </a>
 
-                <!-- TikTok -->
                 <a href="https://www.tiktok.com/@camila.muniz.shop?_r=1&_t=ZS-99GFJsyqwhF" target="_blank" class="social-link-card">
                     <i class="fa-brands fa-tiktok"></i>
                     <div class="social-link-info">
@@ -1200,7 +1086,6 @@
                     </div>
                 </a>
 
-                <!-- Shopee -->
                 <a href="https://collshp.com/munizstore13?view=storefront" target="_blank" class="social-link-card">
                     <i class="fa-solid fa-bag-shopping"></i>
                     <div class="social-link-info">
@@ -1209,7 +1094,6 @@
                     </div>
                 </a>
 
-                <!-- Magalu -->
                 <a href="https://www.magazinevoce.com.br/magazinecamilabispo" target="_blank" class="social-link-card">
                     <i class="fa-solid fa-store"></i>
                     <div class="social-link-info">
@@ -1218,7 +1102,6 @@
                     </div>
                 </a>
 
-                <!-- O Boticário -->
                 <a href="https://minhaloja.grupoboticario.com.br/loja-todaperfumada?utm_source=app_divulgar&utm_medium=mld" target="_blank" class="social-link-card">
                     <i class="fa-solid fa-pump-soap"></i>
                     <div class="social-link-info">
@@ -1227,7 +1110,6 @@
                     </div>
                 </a>
 
-                <!-- Natura -->
                 <a href="https://www.minhaloja.natura.com/consultoria/munizstore25" target="_blank" class="social-link-card">
                     <i class="fa-solid fa-leaf"></i>
                     <div class="social-link-info">
@@ -1236,7 +1118,6 @@
                     </div>
                 </a>
 
-                <!-- Muniz Store -->
                 <a href="https://www.minhavitrine.pro/munizstore25" target="_blank" class="social-link-card">
                     <i class="fa-solid fa-gem"></i>
                     <div class="social-link-info">
@@ -1245,40 +1126,35 @@
                     </div>
                 </a>
 
-                <!-- Shein -->
                 <div class="social-link-card" style="cursor: default;">
                     <i class="fa-solid fa-shirt"></i>
                     <div class="social-link-info">
                         <h4>Shein (Código)</h4>
-                        <span style="color: var(--primary-gold); font-weight: bold;">CUPOM: A4SRS</span>
+                        <span style="color: var(--terracotta-dark); font-weight: bold;">A4SRS</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p>&copy; 2026 Formação IMPARÁVEL - <span class="text-camila">Camila Muniz</span>. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT EXCLUSIVO E OTIMIZADO -->
     <script>
-        // FUNÇÃO DE ROLAGEM DINÂMICA PRECIOSA E CENTRALIZADA
+        // ROLAGEM SMOOTH E CENTRALIZADA
         function scrollToOferta(e) {
             if (e) e.preventDefault();
             const target = document.getElementById('pricingBox');
             if (!target) return;
 
-            // Ativa elementos ocultos antes de calcular para evitar desvio
             document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
 
             const performScroll = () => {
                 const elementRect = target.getBoundingClientRect();
                 const absoluteElementTop = elementRect.top + window.pageYOffset;
-                // Centraliza a caixa da oferta na tela descartando a altura do header flutuante
                 const middleOffset = absoluteElementTop - (window.innerHeight / 2) + (elementRect.height / 2);
 
                 window.scrollTo({
@@ -1287,18 +1163,15 @@
                 });
             };
 
-            // Execução imediata e re-confirmação para garantir a posição após pequenos atrasos de renderização
             performScroll();
             setTimeout(performScroll, 150);
-            setTimeout(performScroll, 400);
         }
 
-        // Aplicação do clique para todos os links referentes a #oferta
         document.querySelectorAll('a[href="#oferta"]').forEach(anchor => {
             anchor.addEventListener('click', scrollToOferta);
         });
 
-        // 1. EFEITO DE DIGITAÇÃO ELEGANTE NA HERO (TYPING EFFECT)
+        // EFEITO DE DIGITAÇÃO NA HERO
         const textToType = '"Você não precisa estar pronta, basta COMEÇAR."';
         const taglineElem = document.getElementById('heroTagline');
         let charIndex = 0;
@@ -1312,7 +1185,7 @@
         }
         window.addEventListener('DOMContentLoaded', typeEffect);
 
-        // 2. HEADER FIXO (STICKY NAV) AO ROLAR A PÁGINA
+        // STICKY NAV
         const stickyNav = document.getElementById('stickyNav');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
@@ -1322,7 +1195,7 @@
             }
         }, { passive: true });
 
-        // 3. ANIMAÇÃO DE REVELAÇÃO AO ROLAR (SCROLL REVEAL VIA INTERSECTION OBSERVER)
+        // SCROLL REVEAL
         const revealElements = document.querySelectorAll('.reveal');
         const observerOptions = {
             root: null,
@@ -1341,22 +1214,7 @@
 
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // 4. EFEITO HOVER TILT 3D SUTIL NOS CARDS
-        const tiltCards = document.querySelectorAll('.obj-card, .learn-card, .social-link-card');
-        tiltCards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                card.style.transform = `perspective(1000px) rotateX(${-y / 20}deg) rotateY(${x / 20}deg) translateY(-3px)`;
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-            });
-        });
-
-        // 5. MODAL DE ZOOM DEPOIMENTOS
+        // MODAL DE ZOOM DEPOIMENTOS
         const modal = document.getElementById('modal');
         const modalImg = document.getElementById('modalImg');
         const modalClose = document.getElementById('modalClose');
@@ -1379,7 +1237,7 @@
             if (e.key === 'Escape' && modal.classList.contains('active')) modal.classList.remove('active');
         });
 
-        // 6. AÇÃO DO BOTÃO
+        // AÇÃO DO BOTÃO
         function cliqueMentoria() {
             alert('Em breve as inscrições estarão abertas! Insira o link de checkout aqui.');
         }
