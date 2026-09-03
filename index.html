@@ -698,6 +698,27 @@
             font-size: 0.8rem;
         }
 
+        .footer-developer {
+            margin-top: 6px;
+            font-size: 0.73rem;
+            opacity: 0.75;
+            transition: var(--transition);
+        }
+
+        .footer-developer:hover {
+            opacity: 1;
+        }
+
+        .footer-developer a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-developer a:hover {
+            color: var(--terracotta-dark);
+        }
+
         /* --- RESPONSIVIDADE OTIMIZADA PARA CELULAR --- */
         @media (max-width: 992px) {
             .about-grid,
@@ -1140,6 +1161,9 @@
     <footer>
         <div class="container">
             <p>&copy; 2026 Formação IMPARÁVEL - <span class="text-camila">Camila Muniz</span>. Todos os direitos reservados.</p>
+            <p class="footer-developer">
+                Página desenvolvida por <a href="https://paulofagoto.com.br" target="_blank" rel="dofollow" title="Paulo Fagoto - Desenvolvimento Web e SEO">Paulo Fagoto</a>
+            </p>
         </div>
     </footer>
 
