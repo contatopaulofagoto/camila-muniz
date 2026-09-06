@@ -309,7 +309,7 @@
         .about-content p {
             margin-bottom: 15px;
             color: #ccc;
-            font-size: 0.98rem;
+            font-size: 1.05rem;
             text-align: justify;
         }
 
@@ -667,20 +667,23 @@
 
         .social-link-card {
             background: #252525;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 22px 20px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             gap: 15px;
-            border: 1px solid transparent;
+            border: 1px solid rgba(197, 160, 89, 0.25);
             transition: var(--transition);
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
         .social-link-card:hover {
             border-color: var(--primary-gold);
             transform: translateY(-5px);
-            background: #2a2a2a;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            background: #2e2e2e;
+            box-shadow: 0 10px 25px rgba(197, 160, 89, 0.25);
         }
 
         .social-link-card i {
@@ -695,14 +698,37 @@
             transform: scale(1.2);
         }
 
+        .social-link-info {
+            flex-grow: 1;
+        }
+
         .social-link-info h4 {
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: #fff;
+            margin-bottom: 2px;
         }
 
         .social-link-info span {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
+            display: block;
+        }
+
+        .social-action-badge {
+            font-size: 0.75rem;
+            color: var(--primary-gold);
+            background: rgba(197, 160, 89, 0.15);
+            padding: 4px 8px;
+            border-radius: 12px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+
+        .social-link-card:hover .social-action-badge {
+            background: var(--primary-gold);
+            color: #000;
+            font-weight: 600;
         }
 
         /* --- FOOTER --- */
@@ -774,6 +800,14 @@
             .testimonials-grid {
                 grid-template-columns: 1fr;
             }
+
+            .social-link-card {
+                flex-wrap: wrap;
+            }
+
+            .social-action-badge {
+                margin-top: 5px;
+            }
         }
     </style>
 </head>
@@ -783,7 +817,7 @@
     <nav class="sticky-nav" id="stickyNav">
         <div class="container">
             <span class="sticky-nav-logo">IMPARÁVEL | <span class="text-camila">Camila Muniz</span></span>
-            <a href="#oferta" class="sticky-nav-btn">Garantir Vaga</a>
+            <a href="https://pay.kiwify.com.br/e8eSfJS" target="_blank" rel="noopener noreferrer" class="sticky-nav-btn">Garantir Vaga</a>
         </div>
     </nav>
 
@@ -796,7 +830,7 @@
             <p class="hero-subtitle">Com <span class="text-camila">Camila Muniz</span></p>
             <p class="hero-tagline" id="heroTagline"></p>
             <div class="cta-container">
-                <a href="#oferta" class="btn-cta">QUERO ME TORNAR IMPARÁVEL</a>
+                <a href="https://pay.kiwify.com.br/e8eSfJS" target="_blank" rel="noopener noreferrer" class="btn-cta">QUERO ME TORNAR IMPARÁVEL</a>
             </div>
         </div>
     </header>
@@ -811,10 +845,6 @@
                 <div class="about-content">
                     <h3>Seja bem-vinda ao meu mundo.</h3>
                     <p>Sou <strong class="text-camila">Camila Muniz</strong>, Estrategista Digital e Mentora, apaixonada por transformar possibilidades em caminhos reais através da internet.</p>
-                    <p>Minha trajetória no digital começou muito antes de ter tudo pronto. Eu também precisei começar, aprender, testar, errar e descobrir, na prática, como usar a internet para criar novas oportunidades.</p>
-                    <p>Hoje, compartilho aquilo que aprendi ao longo dessa caminhada, ajudando outras mulheres a enxergarem que é possível começar do zero e construir sua própria trajetória no digital, com estratégia, conhecimento e ação.</p>
-                    <p>CEO da Formação IMPARÁVEL, ensino de forma prática e descomplicada estratégias para quem deseja entrar no mercado digital, trabalhar com plataformas, criar conteúdo e desenvolver novas possibilidades de renda através da internet.</p>
-                    <p>Aqui você encontra meus projetos, lojas, canais, conteúdos e tudo o que faz parte do meu universo no digital.</p>
                     
                     <span class="signature">Camila Muniz</span>
                 </div>
@@ -1026,7 +1056,7 @@
                 <h3 style="font-family: var(--font-title); font-size: 2rem;">Mentoria IMPARÁVEL</h3>
                 
                 <div class="price-value">
-                    <span>12x de</span> R$ 19,70
+                    <span>12x de</span> R$ 20,37
                 </div>
                 <p class="price-details">ou R$ 197,00 à vista</p>
 
@@ -1037,12 +1067,12 @@
                     <li><i class="fa-solid fa-arrows-rotate"></i> Renovação anual para se manter atualizada</li>
                 </ul>
 
-                <button class="btn-cta" onclick="cliqueMentoria()">QUERO ME TORNAR IMPARÁVEL</button>
+                <a href="https://pay.kiwify.com.br/e8eSfJS" target="_blank" rel="noopener noreferrer" class="btn-cta">QUERO ME TORNAR IMPARÁVEL</a>
 
                 <div class="guarantee-box">
                     <i class="fa-solid fa-shield-halved"></i>
                     <div style="text-align: left;">
-                        <strong style="color: #fff; display: block;">Garantia Incondicional</strong>
+                        <strong style="color: #fff; display: block;">Garantia</strong>
                         <span style="font-size: 0.85rem;">Teste por 07 dias. Se não gostar, devolvemos seu dinheiro.</span>
                     </div>
                 </div>
@@ -1055,7 +1085,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Universo <span class="text-camila">Camila Muniz</span></h2>
-                <p>Conheça meus projetos, lojas parceiras e canais oficiais</p>
+                <p>Clique abaixo para acessar as lojas parceiras e canais oficiais</p>
             </div>
 
             <div class="links-grid">
@@ -1066,6 +1096,7 @@
                         <h4>Instagram</h4>
                         <span>@camilamunizmentora</span>
                     </div>
+                    <span class="social-action-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir</span>
                 </a>
 
                 <!-- WhatsApp -->
@@ -1075,6 +1106,7 @@
                         <h4>WhatsApp</h4>
                         <span>Contato Direto</span>
                     </div>
+                    <span class="social-action-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir</span>
                 </a>
 
                 <!-- TikTok -->
@@ -1084,6 +1116,7 @@
                         <h4>TikTok</h4>
                         <span>@camila.muniz.shop</span>
                     </div>
+                    <span class="social-action-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir</span>
                 </a>
 
                 <!-- Shopee -->
@@ -1093,6 +1126,7 @@
                         <h4>Shopee</h4>
                         <span>Muniz Store</span>
                     </div>
+                    <span class="social-action-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir</span>
                 </a>
 
                 <!-- Magalu -->
@@ -1102,6 +1136,7 @@
                         <h4>Magazine Luiza</h4>
                         <span>Loja Oficial Magalu</span>
                     </div>
+                    <span class="social-action-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir</span>
                 </a>
 
                 <!-- O Boticário -->
@@ -1111,6 +1146,7 @@
                         <h4>Grupo O Boticário</h4>
                         <span>Toda Perfumada</span>
                     </div>
+                    <span class="social-action-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir</span>
                 </a>
 
                 <!-- Natura -->
@@ -1120,6 +1156,7 @@
                         <h4>Natura</h4>
                         <span>Consultoria Muniz Store</span>
                     </div>
+                    <span class="social-action-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir</span>
                 </a>
 
                 <!-- Muniz Store -->
@@ -1129,15 +1166,17 @@
                         <h4>Muniz Store</h4>
                         <span>Vitrine Exclusiva</span>
                     </div>
+                    <span class="social-action-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir</span>
                 </a>
 
-                <!-- Shein -->
-                <div class="social-link-card" style="cursor: default;">
+                <!-- Shein (Código Interativo) -->
+                <div class="social-link-card" onclick="copySheinCode()" id="sheinCard">
                     <i class="fa-solid fa-shirt"></i>
                     <div class="social-link-info">
-                        <h4>Shein (Código)</h4>
-                        <span style="color: var(--primary-gold); font-weight: bold;">CUPOM: A4SRS</span>
+                        <h4>Shein (Cupom Exclusivo)</h4>
+                        <span style="color: var(--primary-gold); font-weight: bold;">CÓDIGO: A4SRS</span>
                     </div>
+                    <span class="social-action-badge" id="sheinBadge"><i class="fa-regular fa-copy"></i> Copiar Código</span>
                 </div>
             </div>
         </div>
@@ -1233,9 +1272,24 @@
             if (e.key === 'Escape' && modal.classList.contains('active')) modal.classList.remove('active');
         });
 
-        // 6. AÇÃO DO BOTÃO
-        function cliqueMentoria() {
-            alert('Em breve as inscrições estarão abertas! Insira o link de checkout aqui.');
+        // 6. FUNÇÃO PARA COPIAR CÓDIGO SHEIN AUTOMATICAMENTE
+        function copySheinCode() {
+            const code = 'A4SRS';
+            navigator.clipboard.writeText(code).then(() => {
+                const badge = document.getElementById('sheinBadge');
+                const originalContent = badge.innerHTML;
+                badge.innerHTML = '<i class="fa-solid fa-check"></i> Copiado!';
+                badge.style.background = '#25d366';
+                badge.style.color = '#fff';
+                
+                setTimeout(() => {
+                    badge.innerHTML = originalContent;
+                    badge.style.background = '';
+                    badge.style.color = '';
+                }, 2500);
+            }).catch(err => {
+                alert('Código: A4SRS');
+            });
         }
     </script>
 </body>
